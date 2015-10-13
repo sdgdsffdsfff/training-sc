@@ -1,3 +1,6 @@
 training-sc-config/.settings
 training-sc-run/.settings
 training-sc-web/.settings
+*.classpath
+*.project
+.settings/

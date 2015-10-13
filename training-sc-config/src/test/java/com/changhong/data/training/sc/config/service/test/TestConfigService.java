@@ -1,5 +1,13 @@
 package com.changhong.data.training.sc.config.service.test;
 
+import java.io.IOException;
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import com.changhong.data.training.sc.config.service.impl.ConfigServiceImpl;
+
 /**
  * @author qiyao
  * @mail yao.qi@changhong.com
@@ -9,8 +17,18 @@ package com.changhong.data.training.sc.config.service.test;
  */
 public class TestConfigService {
 
-  @Test
-  public void initTest(){
-
-  }
+	private ConfigServiceImpl csi;
+	/**
+	 * @throws IOException 
+	 * 
+	 */
+	@Before
+	public void initTest() throws IOException {
+		csi = new ConfigServiceImpl();
+	}
+	
+	@Test
+	public void testGet(){
+		Assert.assertEquals("config.test.resources", csi.get("name"));
+	}
 }
